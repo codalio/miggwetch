@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 
+const asset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+
 const COOKIES = [
   {
     name: 'Kakabeka Crunch',
     price: '$5',
-    image: '/images/kakabeka-pack.jpg',
+    image: asset('images/kakabeka-pack.jpg'),
     blurb:
       'Semisweet, milk, and white Belgian chocolate with pretzel pieces, toffee bits, and flaky sea salt.',
     story: 'Inspired by Kakabeka Falls & the legend of Princess Green Mantle',
@@ -12,7 +14,7 @@ const COOKIES = [
   {
     name: 'Sleeping Giant',
     price: '$5',
-    image: '/images/sleeping-giant.jpg',
+    image: asset('images/sleeping-giant.jpg'),
     blurb:
       'Semisweet, milk, and dark Belgian chocolate with walnut pieces — rich, nutty, and bold.',
     story: 'Named for the Sleeping Giant of Thunder Bay',
@@ -20,28 +22,28 @@ const COOKIES = [
   {
     name: 'Turtle Island',
     price: '$5',
-    image: '/images/turtle-island.jpg',
+    image: asset('images/turtle-island.jpg'),
     blurb: 'Old-fashioned chewy oatmeal raisin with browned butter.',
     story: 'A classic cookie carrying the Turtle Island story',
   },
   {
     name: 'Louis Riel',
     price: '$5',
-    image: '/images/louis-riel-front.jpg',
+    image: asset('images/louis-riel-front.jpg'),
     blurb: 'Oatmeal chocolate chip — a tribute cookie with history on the label.',
     story: 'Honouring Métis history and leadership',
   },
   {
     name: 'Every Child Matters',
     price: '$5',
-    image: '/images/ecm-cookies.jpg',
+    image: asset('images/ecm-cookies.jpg'),
     blurb: 'Branded chocolate chip cookies for Orange Shirt Day and school events.',
     story: 'Baked for remembrance, education, and solidarity',
   },
   {
     name: 'White Thunder',
     price: '$5',
-    image: '/images/macadamia.jpg',
+    image: asset('images/macadamia.jpg'),
     blurb: 'Premium white chocolate and macadamia nuts.',
     story: 'A bright, celebratory cookie for thank-you moments',
   },
@@ -96,7 +98,7 @@ function Nav() {
     <>
       <header className={`nav ${scrolled ? 'is-scrolled' : ''}`}>
         <a className="nav-brand" href="#top" aria-label="Miigwetch Cookies home">
-          <img src="/images/logo-transparent.png" alt="" />
+          <img src={asset("images/logo-transparent.png")} alt="" />
           <span>Miigwetch</span>
         </a>
         <nav aria-label="Primary">
@@ -275,7 +277,7 @@ export default function App() {
         <section className="hero" aria-label="Miigwetch Cookies">
           <div className="hero-media">
             <img
-              src="/images/gift-box.jpg"
+              src={asset("images/gift-box.jpg")}
               alt="Assorted Miigwetch cookies packaged for gifting in a red gift box"
             />
           </div>
@@ -283,7 +285,7 @@ export default function App() {
           <div className="hero-content">
             <img
               className="hero-logo"
-              src="/images/logo-transparent.png"
+              src={asset("images/logo-transparent.png")}
               alt="Miigwetch Cookies — Sweetness with Gratitude"
             />
             <p className="hero-kicker">Sweetness with gratitude</p>
@@ -351,21 +353,21 @@ export default function App() {
             <div className="story-gallery reveal">
               <figure>
                 <img
-                  src="/images/baking-more.jpg"
+                  src={asset("images/baking-more.jpg")}
                   alt="Fresh Miigwetch cookies cooling on baking sheets"
                   loading="lazy"
                 />
               </figure>
               <figure>
                 <img
-                  src="/images/vendor.jpg"
+                  src={asset("images/vendor.jpg")}
                   alt="Miigwetch booth at a community marketplace"
                   loading="lazy"
                 />
               </figure>
               <figure>
                 <img
-                  src="/images/packaging.jpg"
+                  src={asset("images/packaging.jpg")}
                   alt="Individually packaged Miigwetch cookies ready for delivery"
                   loading="lazy"
                 />
@@ -442,13 +444,13 @@ export default function App() {
             </div>
             <div className="legend-photos reveal" aria-label="Custom legend cookie examples">
               <figure>
-                <img src="/images/legend-molly.jpg" alt="Custom Molly Lou legend cookie" loading="lazy" />
+                <img src={asset("images/legend-molly.jpg")} alt="Custom Molly Lou legend cookie" loading="lazy" />
               </figure>
               <figure>
-                <img src="/images/legend-natty.jpg" alt="Custom Nathaniel Crooks legend cookie" loading="lazy" />
+                <img src={asset("images/legend-natty.jpg")} alt="Custom Nathaniel Crooks legend cookie" loading="lazy" />
               </figure>
               <figure>
-                <img src="/images/legend-hunter.jpg" alt="Custom Hunter first birthday cookie" loading="lazy" />
+                <img src={asset("images/legend-hunter.jpg")} alt="Custom Hunter first birthday cookie" loading="lazy" />
               </figure>
             </div>
           </div>
@@ -491,7 +493,7 @@ export default function App() {
             </div>
             <div className="corporate-visual reveal">
               <img
-                src="/images/box-cookies.jpg"
+                src={asset("images/box-cookies.jpg")}
                 alt="Box of individually wrapped Miigwetch cookies"
                 loading="lazy"
               />
@@ -528,7 +530,7 @@ export default function App() {
       <footer className="footer">
         <div className="footer-inner">
           <div className="footer-brand">
-            <img src="/images/logo-transparent.png" alt="" />
+            <img src={asset("images/logo-transparent.png")} alt="" />
             <div>
               <strong>Miigwetch Cookies</strong>
               <span>Sweetness with gratitude</span>
