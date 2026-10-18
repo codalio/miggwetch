@@ -2,6 +2,24 @@ import { useEffect, useState } from 'react'
 
 const asset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
 
+function InstagramIcon() {
+  return (
+    <svg
+      className="icon-instagram"
+      viewBox="0 0 24 24"
+      width="18"
+      height="18"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        fill="currentColor"
+        d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zm9.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"
+      />
+    </svg>
+  )
+}
+
 const COOKIES = [
   {
     name: 'Kakabeka Crunch',
@@ -277,30 +295,31 @@ export default function App() {
         <section className="hero" aria-label="Miigwetch Cookies">
           <div className="hero-media">
             <img
-              src={asset("images/gift-box.jpg")}
-              alt="Assorted Miigwetch cookies packaged for gifting in a red gift box"
+              src={asset('images/hero-landing.jpg')}
+              alt="Miigwetch red gift boxes and a stack of chocolate chip cookies on a white tile counter"
             />
           </div>
-          <div className="hero-scrim" aria-hidden="true" />
           <div className="hero-content">
-            <img
-              className="hero-logo"
-              src={asset("images/logo-transparent.png")}
-              alt="Miigwetch Cookies — Sweetness with Gratitude"
-            />
-            <p className="hero-kicker">Sweetness with gratitude</p>
-            <h1>Give the gift that says thank you</h1>
-            <p className="hero-lead">
-              Premium home-baked cookies from an Indigenous-owned bakery in Ontario — each one a
-              thank-you, each package a story of people, places, and legends.
-            </p>
-            <div className="hero-actions">
-              <a className="btn btn-primary" href="#order">
-                Inquire about an order
-              </a>
-              <a className="btn btn-ghost" href="#cookies">
-                Meet the cookies
-              </a>
+            <div className="hero-panel">
+              <img
+                className="hero-logo"
+                src={asset('images/logo-transparent.png')}
+                alt="Miigwetch Cookies — Sweetness with Gratitude"
+              />
+              <p className="hero-kicker">Sweetness with gratitude</p>
+              <h1>Give the gift that says thank you</h1>
+              <p className="hero-lead">
+                Premium home-baked cookies from an Indigenous-owned bakery in Ontario — each one a
+                thank-you, each package a story of people, places, and legends.
+              </p>
+              <div className="hero-actions">
+                <a className="btn btn-primary" href="#order">
+                  Inquire about an order
+                </a>
+                <a className="btn btn-ghost" href="#cookies">
+                  Meet the cookies
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -345,6 +364,7 @@ export default function App() {
               </p>
               <div className="badge-row">
                 <span className="badge">100% Indigenous-owned</span>
+                <span className="badge">CAMSC Certified Supplier</span>
                 <span className="badge">Métis Nation of Ontario</span>
                 <span className="badge">Belgian chocolate</span>
                 <span className="badge">Baked to order</span>
@@ -353,21 +373,21 @@ export default function App() {
             <div className="story-gallery reveal">
               <figure>
                 <img
-                  src={asset("images/baking-more.jpg")}
+                  src={asset('images/baking-more.jpg')}
                   alt="Fresh Miigwetch cookies cooling on baking sheets"
                   loading="lazy"
                 />
               </figure>
               <figure>
                 <img
-                  src={asset("images/vendor.jpg")}
-                  alt="Miigwetch booth at a community marketplace"
+                  src={asset('images/ken-goodmans.jpg')}
+                  alt="Ken Costello at a Miigwetch Cookies table at Goodmans LLC"
                   loading="lazy"
                 />
               </figure>
               <figure>
                 <img
-                  src={asset("images/packaging.jpg")}
+                  src={asset('images/packaging.jpg')}
                   alt="Individually packaged Miigwetch cookies ready for delivery"
                   loading="lazy"
                 />
@@ -467,6 +487,21 @@ export default function App() {
                   a tangible gift with culture and care baked in.
                 </p>
               </div>
+              <aside className="camsc-callout" aria-label="CAMSC Certified Supplier">
+                <img
+                  src={asset('images/camsc-badge.png')}
+                  alt="CAMSC Certified Supplier badge, valid September 22, 2026 to September 22, 2027"
+                  loading="lazy"
+                />
+                <div>
+                  <strong>CAMSC Certified Supplier</strong>
+                  <p>
+                    Miigwetch Cookies is a CAMSC Certified Supplier through the Canadian Aboriginal
+                    and Minority Supplier Council — a trusted partner for corporate and government
+                    procurement teams looking for Indigenous-owned suppliers.
+                  </p>
+                </div>
+              </aside>
               <div className="corporate-points">
                 <div className="point">
                   <h3>Event &amp; conference giveaways</h3>
@@ -493,7 +528,7 @@ export default function App() {
             </div>
             <div className="corporate-visual reveal">
               <img
-                src={asset("images/box-cookies.jpg")}
+                src={asset('images/box-cookies.jpg')}
                 alt="Box of individually wrapped Miigwetch cookies"
                 loading="lazy"
               />
@@ -515,9 +550,19 @@ export default function App() {
               <a className="email" href="mailto:miigwetch.cookies@gmail.com">
                 miigwetch.cookies@gmail.com
               </a>
+              <a
+                className="social-link"
+                href="https://www.instagram.com/miigwetchcookies/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Miigwetch Cookies on Instagram (opens in a new tab)"
+              >
+                <InstagramIcon />
+                Instagram
+              </a>
               <p className="prose">
-                Proudly Indigenous-owned · Greater Toronto area delivery · Fresh from a licensed
-                home bakery
+                Proudly Indigenous-owned · CAMSC Certified Supplier · Greater Toronto area delivery
+                · Fresh from a licensed home bakery
               </p>
             </div>
             <div className="reveal">
@@ -530,7 +575,7 @@ export default function App() {
       <footer className="footer">
         <div className="footer-inner">
           <div className="footer-brand">
-            <img src={asset("images/logo-transparent.png")} alt="" />
+            <img src={asset('images/logo-transparent.png')} alt="" />
             <div>
               <strong>Miigwetch Cookies</strong>
               <span>Sweetness with gratitude</span>
@@ -538,9 +583,29 @@ export default function App() {
           </div>
           <div className="footer-meta">
             <a href="mailto:miigwetch.cookies@gmail.com">Email Ken</a>
+            <a
+              href="https://www.instagram.com/miigwetchcookies/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Miigwetch Cookies on Instagram (opens in a new tab)"
+            >
+              <InstagramIcon />
+              Instagram
+            </a>
             <a href="#cookies">Cookies</a>
             <a href="#legends">Legend cookies</a>
             <a href="#order">Order inquiry</a>
+          </div>
+          <div className="footer-accreditation">
+            <img
+              src={asset('images/camsc-badge.png')}
+              alt="CAMSC Certified Supplier"
+              loading="lazy"
+            />
+            <p>
+              Miigwetch Cookies is a CAMSC Certified Supplier through the Canadian Aboriginal and
+              Minority Supplier Council.
+            </p>
           </div>
           <p className="footer-copy">
             © {new Date().getFullYear()} Miigwetch Cookies. Miigwetch means thank you. Stay
